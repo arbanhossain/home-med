@@ -114,11 +114,11 @@ const postData = () => {
         })
         .then(data => {
             console.log(data);
+            location.reload();
         })
         .catch(err => {
             console.error('Error:', err);
         });
-    location.reload();
 }
 
 const deleteValue = (e) => {
@@ -130,10 +130,12 @@ const deleteValue = (e) => {
                 method: 'DELETE'
             })
             .then(res => res.json)
-            .then(data => console.log('Success:', data))
+            .then(data => {
+                console.log('Success:', data);
+                location.reload();
+            })
             .catch(err => console.error('Error:', err));
         console.log('deleted');
-        location.reload();
     }
 }
 
